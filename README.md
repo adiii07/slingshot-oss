@@ -1,4 +1,4 @@
-## The website link [here]()
+## The website link [here](https://slingshot-oss.herokuapp.com/)
 ---
 
 ## Registration & Login
