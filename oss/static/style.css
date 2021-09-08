@@ -1,0 +1,223 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    margin: 0 0;
+    padding: 0 0;
+    background-color: #E5E7EB;
+}
+
+.sidenav {
+    position: fixed;
+    overflow-x: hidden;
+    height: 100%;
+    width: 15.78%;
+    background-color: #081A26;
+    text-align: center;
+}
+
+.sidenav img {
+    padding-top: 6%;
+    padding-right: 12%;
+}
+
+.sidenav ul {
+    text-align: left;
+    list-style: none;
+    padding-top: 22%;
+}
+
+.sidenav li {
+    padding-bottom: 23%;
+}
+
+.sidenav a {
+    text-decoration: none;
+    color: #C0C8D0;
+}
+
+nav {
+    background-color: white;
+    box-shadow: 5px 5px 5px rgb(184, 184, 184);
+}
+
+.profile{
+    height: 64px;
+    margin-left: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile img {
+    border-radius: 50%;
+    float: left;
+}
+
+.profile p {
+    float: right;
+    margin-right: 5%;
+    color: rgb(61, 61, 61);
+}
+
+.login a{
+    float: right;
+    text-decoration: none;
+    color: rgb(61, 61, 61);
+}
+
+.login:hover {
+    background-color: rgb(207, 207, 207);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.dropdown {
+    right: 70px;
+    position: relative;
+    display: inline-block;
+}
+
+.content  {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 5px 5px 5px rgb(184, 184, 184);
+    margin-top: 20px;
+    width: 80px;
+    padding-right: 10px;
+}
+
+.content a{
+    text-align: left;
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(61, 61, 61);
+    padding: 10px;
+}
+
+.profile:hover .content {
+    display: block;
+}
+
+.dropdown a:hover {
+    font-weight: 650;
+}
+
+.oss-postings {
+    margin-left: 15.78%;
+}
+
+h1 {
+    text-align: center;
+    color: #133a53;
+    text-shadow: 2px 2px 5px rgb(184, 184, 184);
+    font-size: 40px;
+}
+
+.info{
+    text-align: center;
+}
+
+.info p{
+    list-style: none;
+    padding: 0px 30px;
+    font-size: 18px;
+    font-weight: 550;
+    padding-bottom: 50px;
+}
+
+.info h2 {
+    text-align: center;
+    text-shadow: 2px 2px 5px rgb(184, 184, 184);
+    color: #133a53;
+}
+
+.posting {
+    width: 280.667px;
+    background-color: white;
+    overflow-x: hidden;
+    /* overflow-y: scroll; */
+    margin-left: 5%;
+    margin-top: 2%;
+    border-radius: 15px;
+    padding-bottom: 40px;
+    box-shadow: 2px 2px 5px rgb(184, 184, 184);
+}
+
+.posting a {
+    text-decoration: none;
+    margin-left: 43%;
+    padding: 5px;
+    color: black;
+    border: black solid 0.5px;
+    border-radius: 5px;
+    background-color: #E5E7EB;
+}
+
+.posting a:hover {
+    background-color: #b6b6b6;
+}
+
+.posting h3 {
+    padding-left: 6px;
+}
+
+.posting h4 {
+    padding-left: 10px;
+    color: rgb(46, 46, 46);
+}
+
+.posting p {
+    padding-left: 14px;
+}
+
+.oss-heading {
+    margin-left: 4%;
+}
+
+.prev-oss {
+    display: flex;
+    padding-bottom: 40px;
+    flex-flow: row wrap;
+}
+
+span {
+    font-weight: 600;
+    color: rgb(46, 46, 46);
+}
+
+.submission {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.subs {
+    margin: 5%;
+    background-color: white;
+    width: 280.667px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgb(184, 184, 184);
+    padding: 5px;
+}
+
+.subs h4 {
+    font-weight: 500;
+    color: rgb(46, 46, 46);
+}
+
+.details {
+    text-align: center;
+}
+
+.account {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.account-oss {
+    width: 280.667px;
+    margin: 5%;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgb(184, 184, 184);
+    border-radius: 15px;
+}

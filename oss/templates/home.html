@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="info">
+    <h1>Open Source Sunday 🚀</h1>
+        <p>Take part in our weekly open-source coding challenges every Sunday. The topics of the challenges range from Machine Learning to Web Development. With different levels to the challenge, it does not matter if you aren't an expert in the topic.</p>
+    <h2>Winners Recieve</h2>
+        <img src="{{url_for('static', filename='images/amazon.png')}}" alt="" width="50px" height="40px">
+        <p>Amazon Gift Card</p>
+        <img src="{{url_for('static', filename='images/verify.png')}}" alt="" width="24px" height="24px">            
+        <p>Slingshot Verification</p>
+        <img src="{{url_for('static', filename='images/skills.png')}}" alt="" width="34px" height="34px">
+        <p>Learn in new technologies every week!</p>
+</div>
+
+<h2 class="oss-heading">Current OSS:</h2>
+
+    <div class="posting" style="width: 79.11%;">
+    <h3>{{ current_oss.title }}</h3>
+        <h4>By: {{admin_posted}} </h4>
+        {% if current_oss.premise %}
+        <h4>Premise:</h4>
+            <p class="details">{{current_oss.premise}}</p>
+        {% endif %}
+        <h4>Challenge:</h4>
+            <p class="details">{{current_oss.challenge}}</p>
+        <div class="challenge">
+            {% if current_oss.beginner %}
+            <h4>Beginner</h4>
+                <p class="details">{{current_oss.beginner}}</p>
+            {% endif %}
+            {% if current_oss.intermadiate %}
+            <h4>Intermediate</h4>
+                <p class="details">{{current_oss.intermediate}}</p>
+            {% endif %}
+            {% if current_oss.advance %}
+            <h4>Advanced</h4>
+                <p class="details">{{current_oss.advance}}</p>
+            {% endif %}
+            <h4>Deadlines:</h4>
+                <p><span>Beginner:</span>              {{beg_date.strftime('%a %I:%M%p')}}</p>
+                <p><span>Intermadiate/Advance:</span>  {{ad_date.strftime('%a %I:%M%p')}}</p>
+        </div>
+        <div class="view_sub" style="margin-top: 30px;"><a href="{{url_for('view_submissions', oss_id=current_oss.id)}}">View Submissions</a></div>
+    </div>
+
+
+<h2 class="oss-heading">Previous OSS:</h2>
+<div class="prev-oss">
+
+    {% for oss in prev_oss %}
+
+    <div class="posting">
+        <h3>{{ oss.title }}</h3>
+            <h4>By: {{admin_posted}} </h4>
+            {% if oss.premise %}
+            <h4>Premise:</h4>
+                <p class="details">{{oss.premise}}</p>
+            {% endif %}
+            <h4>Challenge:</h4>
+                <p class="details">{{oss.challenge}}</p>
+            <div class="challenge">
+                {% if oss.beginner %}
+                <h4>Beginner</h4>
+                    <p class="details">{{oss.beginner}}</p>
+                {% endif %}
+                {% if oss.intermadiate %}
+                <h4>Intermediate</h4>
+                    <p class="details">{{oss.intermediate}}</p>
+                {% endif %}
+                {% if oss.advance %}
+                <h4>Advanced</h4>
+                    <p class="details">{{oss.advance}}</p>
+                {% endif %}
+            </div>
+            <div class="view_sub" style="margin-top: 30px;"><a href="{{url_for('view_submissions', oss_id=oss.id)}}">View Submissions</a></div>
+        </div>
+
+        {% endfor %}
+
+</div>
+
+{% endblock %}

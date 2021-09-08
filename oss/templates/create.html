@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Create an OSS</h1>
+
+<div class="form">
+        <form method="POST", action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Register Today!</legend>
+                <div class="form-group">
+                    {{ form.title.label(class="form-control-label") }}
+
+                    {% if form.title.errors %}
+                        {{ form.title(class="form-control form-control-lg is-invalid") }}
+                        <div class='invalid-feedback'>
+                            {% for error in form.title.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.title(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.premise.label(class="form-control-label") }}
+                    {% if form.premise.errors %}
+                        {{ form.premise(class="form-control form-control-lg is-invalid") }}
+                        <div class='invalid-feedback'>
+                            {% for error in form.premise.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.premise(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.challenge.label(class="form-control-label") }}
+                    {% if form.challenge.errors %}
+                        {{ form.challenge(class="form-control form-control-lg is-invalid") }}
+                        <div class='invalid-feedback'>
+                            {% for error in form.challenge.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.challenge(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.beginner.label(class="form-control-label") }}
+                    {% if form.beginner.errors %}
+                        {{ form.beginner(class="form-control form-control-lg is-invalid") }}
+                        <div class='invalid-feedback'>
+                            {% for error in form.beginner.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.beginner(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.intermediate.label(class="form-control-label") }}
+                    {% if form.intermediate.errors %}
+                        {{ form.intermediate(class="form-control form-control-lg is-invalid") }}
+                        <div class='invalid-feedback'>
+                            {% for error in form.intermediate.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.intermediate(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.advance.label(class="form-control-label") }}
+                    {% if form.advance.errors %}
+                        {{ form.advance(class="form-control form-control-lg is-invalid") }}
+                        <div class='invalid-feedback'>
+                            {% for error in form.advance.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.advance(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+</div>
+
+{% endblock %}

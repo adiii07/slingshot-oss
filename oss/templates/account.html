@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>My Account</h1>
+    <div class="details">
+        <h3>{{ current_user.name }}</h3>
+        <h3>{{ current_user.email }}</h3>
+    </div>
+    
+<div class=account>
+    {% for submission in current_user.submissions %}
+    {% for oss in oss_all %}
+    <div class="account-oss">
+        <h3>{{oss.title}}</h3>
+        <h4>{{submission.level}}</h4>
+        <h4>{{submission.github}}</h4>
+        <h4>Description:</h4>
+        <p>{{submission.description}}</p>
+    </div>
+    {% endfor %}
+    {% endfor %}
+</div>
+
+{% endblock %}

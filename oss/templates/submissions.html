@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- view the submissions -->
+<div class="submission">
+
+{% for submission in submissions %}
+
+    <div class="subs">
+        <h4><span>Name:</span> {{ submission.user_submitted }}</h4>
+        <h4><span>Level:</span> {{ submission.level }}</h4>
+        <h4><span>Description</span></h4>
+        <h4>{{ submission.description }}</h4>
+        <h4><span>Github:</span> {{ submission.github }}</h4>
+    </div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

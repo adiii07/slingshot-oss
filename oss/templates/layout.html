@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLINGSHOT | Open Source Sunday</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="icon" href="https://slingshotahead.com/favicon.ico">
+</head>
+<body>
+    
+    <div class="sidenav">
+        <img src="{{url_for('static', filename='images/slingshot.png')}}" alt="slingshot_logo" width="120px" height="47.05px">
+        <ul class="sidenav-li">
+            <li><a href="{{url_for('home')}}">Open Source Sundays</a></li>
+            <li><a href="{{url_for('submit_oss')}}">Submit Your Project</a></li>
+            {% if current_user.user == "admin" %}
+            <li><a href="{{url_for('create_oss')}}">Post an OSS</a></li>
+            <li><a href="{{url_for('add_admin')}}">Add an Admin</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <nav>
+    {% if current_user.is_authenticated %}
+        <div class="profile">
+            <img src="{{url_for('static', filename='images/blankProfilePic.png')}}" alt="profilepic" width="40px" height="40px">
+            <p>{{ current_user.name }}</p>
+            <div class="dropdown">
+                <img src="{{url_for('static', filename='images/dropdown.png')}}" alt="" width=24px height="24px">
+                <div class="content"><a href="{{url_for('account')}}">Account</a>
+                    <a href="{{url_for('logout')}}">Sign Out</a></div>
+            </div>
+        </div>
+    {% else %}
+        <div class="profile">
+            <p class="login"><a href="{{url_for('login')}}">Login</a></p>
+            <p class="login"><a href="{{url_for('register')}}">Sign Up</a></p>
+        </div>
+    {% endif %}
+    </nav>
+
+    <div class="oss-postings">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
